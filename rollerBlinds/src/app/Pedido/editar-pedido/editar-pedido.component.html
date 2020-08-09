@@ -1,0 +1,90 @@
+<form action="">
+
+  <label type="text">Tipo:</label>
+  <br>
+    <div class="select">
+    <select
+    type="text" id="select1" [(ngModel)]="pedido.tipo" name="tipo"
+    class="browser-default custom-select">
+    <option selected>simple</option>
+    <option value="doble">doble</option>
+  </select>
+  </div>
+  <div class="medidas">
+  <label for="exampleInputPassword1">Ancho:</label>
+      <input  type="text"  [(ngModel)]="pedido.ancho" name="ancho"
+      placeholder="Ancho:">
+  </div>
+  <div class="medidas">
+  <label for="exampleInputPassword1">Alto:</label>
+      <input   type="text" id="alto" [(ngModel)]="pedido.alto" name="alto"
+      placeholder="Alto:">
+  </div>
+  <br> <label for="exampleInputPassword1">Tela:</label> <br>
+    <div class="select">
+     <select
+     [(ngModel)]="pedido.tela" name="tela" class="browser-default custom-select">
+    <option selected>Blackout premiun</option>
+    <option value="Blackout smart">Blackout smart</option>
+    <option value="Screen 5% premiun">Screen 5% premiun</option>
+    <option value="Screen 5% smart">Screen 5% smart</option>
+  </select>
+  </div>
+  <br>
+  <label for="exampleInputPassword1">Color:</label>
+   <br>
+   <div class="select">
+  <select  [(ngModel)]="pedido.color" name="color"
+    class="browser-default custom-select">
+    <option selected>blanco</option>
+    <option value="gris">gris</option>
+    <option value="natural">natural</option>
+    <option value="negro">negro</option>
+  </select>
+  </div>
+  <label for="exampleInputPassword1">Cant:</label>
+  <div class="cantYenvio">
+  <select
+  [(ngModel)]="pedido.cantidad" name="cantidad"
+    class="browser-default custom-select">
+    <option selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  </div>
+  <label class="labelNombre" for="exampleInputPassword1">Envio:</label>
+  <div class="cantYenvio">
+  <select
+  [(ngModel)]="pedido.envio" name="envio"
+    class="browser-default custom-select">
+    <option selected>si</option>
+    <option value="no">no</option>
+  </select>
+  </div>
+  <br>
+  <label for="exampleInputPassword1">Cadena:</label>
+  <br>
+  <div class="select">
+  <select  [(ngModel)]="pedido.tipoCadena" name="tipoCadena"
+    class="browser-default custom-select">
+    <option selected>Plastica</option>
+    <option value="Metalica">Metalica</option>
+  </select>
+  </div>
+  <br>
+  <label for="exampleInputPassword1">Accionamiento:</label>
+  <br>
+  <div class="select">
+  <select [(ngModel)]="pedido.ladoCadena" name="ladoCadena"
+    class="browser-default custom-select">
+    <option selected>Derecha</option>
+    <option value="Izquierda">Izquierda</option>
+  </select> <br>
+  </div>
+  <div class="select">
+  <input  [(ngModel)]="pedido.cliente" name="cliente">
+  <input type="hidden" [(ngModel)]="pedido.id" name="id">
+  <input (click)="Guardar(pedido)"  id="btnGuardar"  class="btn btn-primary"  type="submit"  value="Guardar" [disabled]="!pedidoForm.valid"/>
+  </div>
+</form>

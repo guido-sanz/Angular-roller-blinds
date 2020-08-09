@@ -1,0 +1,12 @@
+#centrarTabla{
+	text-align: center;
+}
+
+#centrarTabla table{
+	margin: 0 auto;
+	text-align: center;
+}
+
+a:hover{
+  background-color: #A0A2A2;
+}

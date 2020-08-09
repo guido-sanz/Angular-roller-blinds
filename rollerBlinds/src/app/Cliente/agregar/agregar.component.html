@@ -1,0 +1,34 @@
+<form [formGroup]="formGroup">
+<div class="form-group">
+  <input type="hidden" formControlName="id"/>
+  <label for="exampleInputEmail1">Nombre:</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Nombre*" formControlName="name"/>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Apellido:</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Apellido*" formControlName="lastname"/>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Dni:</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="dni*" formControlName="dni"/>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Mail:</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Mail*" formControlName="mail"/>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Telefono:</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Telefono*" formControlName="phone"/>
+</div>
+
+<input (click)="Guardar()"  class="btn btn-primary"  type="submit"  value="Guardar" [disabled]="!formGroup.valid"/>
+</form>

@@ -1,0 +1,10 @@
+#centrarTabla {
+	text-align: center;
+}
+#centrarTabla table {
+	margin: 0 auto;
+	text-align: left;
+}
+th, td {
+	text-align: center;
+}

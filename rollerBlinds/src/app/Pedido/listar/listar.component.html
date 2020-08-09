@@ -1,0 +1,37 @@
+<div id="centrarTabla">
+  <table class="table" id="tablaPrincipal" style="width: 80%">
+  <thead class="thead-dark">
+    <tr>
+      <th>TIPO</th>
+      <th>TELA</th>
+      <th>COLOR</th>
+      <th>ANCHO</th>
+      <th>ALTO</th>
+      <th>CANTIDAD</th>
+      <th>CADENA</th>
+      <th>ACC</th>
+      <th>ENVIO</th>
+      <th>ITEM</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tr *ngFor = "let pedidos of items; let i=index" [style.backgroundColor] = "i%2 === 0 ? '#D1D6D7' : 'white'">
+      <td>{{pedidos.tipo}}</td>
+      <td>{{pedidos.tela}}</td>
+      <td>{{pedidos.color}}</td>
+      <td>{{pedidos.ancho}}</td>
+      <td>{{pedidos.alto}}</td>
+      <td>{{pedidos.cantidad}}</td>
+      <td>{{pedidos.ladoCadena}}</td>
+      <td>{{pedidos.tipoCadena}}</td>
+      <td>{{pedidos.envio}}</td>
+      <td>{{pedidos.total}}</td>
+      <td><a class='far fa-edit' (click)="editar(pedidos)" style='font-size:28px;color:#4D7B99' atl="Editar"></a></td>
+      <td><a class='fas fa-download' style="font-size:28px;color:#4D7B99"></a></td>
+      <td><a class='fas fa-trash-alt' style='font-size:28px;color:#E31515'></a></td>
+    </tr>
+
+  </table>
+</div>

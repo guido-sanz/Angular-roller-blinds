@@ -1,0 +1,38 @@
+<div id="centrarTabla">
+  <table class="table" id="tablaPrincipal" style="width: 45%">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>DNI</th>
+        <th>EMAIL</th>
+        <th>TELEFONO</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th><a [routerLink]="['add']" class='fas fa-user-plus'
+          style='font-size: 24px ; color: #D3D8DA' ></a></th>
+      </tr>
+    </thead>
+    <tr *ngFor = "let clientes of items; let i=index" [style.backgroundColor] = "i%2 === 0 ? '#D1D6D7' : 'white'">
+      <td>{{clientes.id}}</td>
+      <td>{{clientes.name}}</td>
+      <td>{{clientes.lastname}}</td>
+      <td>{{clientes.dni}}</td>
+      <td>{{clientes.mail}}</td>
+      <td>{{clientes.phone}}</td>
+      <td><a (click)="agregarPedido(clientes)" class="fa fa-plus-square"
+        style="font-size: 30px; color: #4D7B99"></a></td>
+      <td><a  (click)="ListarPedidos(clientes)"  class='fas fa-cut'
+        style="font-size: 30px; color: #4D7B99"></a></td>
+      <td><a (click)="Editar(clientes)"  class='fas fa-pen'
+        style='font-size: 28px; color: #4D7B99'></a></td>
+      <td><a (click)="Delete(clientes)" [routerLink]="['listar']"  class='fas fa-trash-alt'
+        style='font-size: 28px; color: #E31515'></a></td>
+      <td><a (click)="Finalizar(clientes)" class="fa fa-check-square"
+        style="font-size: 30px; color: #05C436"></a></td>
+    </tr>
+  </table>
+</div>

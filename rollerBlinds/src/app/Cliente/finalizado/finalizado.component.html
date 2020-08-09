@@ -1,0 +1,25 @@
+<div id="centrarTabla">
+  <table class="table" id="tablaPrincipal" style="width: 45%">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>DNI</th>
+        <th>EMAIL</th>
+        <th>TELEFONO</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor = "let clientes of items; let i=index" [style.backgroundColor] = "i%2 === 0 ? '#D1D6D7' : 'white'">
+      <td>{{clientes.id}}</td>
+      <td>{{clientes.name}}</td>
+      <td>{{clientes.lastname}}</td>
+      <td>{{clientes.dni}}</td>
+      <td>{{clientes.mail}}</td>
+      <td>{{clientes.phone}}</td>
+      <td><a class='fas fa-cut'
+        style="font-size: 30px; color: #4D7B99"></a></td>
+    </tr>
+  </table>
+</div>
