@@ -10,7 +10,8 @@ import { Cliente } from '../../modelo/Cliente';
 })
 export class EditarComponent implements OnInit {
   @Input() id: number;
-  cliente: Cliente = new Cliente();
+  c: Cliente;
+  saveCliente: Cliente;
   formGroup: FormGroup;
   constructor(private router: Router, private service: ServiceService) {
     this.formGroup = new FormGroup({
@@ -27,18 +28,38 @@ export class EditarComponent implements OnInit {
   }
 
   Editar(){
-    let id= localStorage.getItem("id");
-    this.service.getClienteId(+id)
+    const id= parseInt(localStorage.getItem("id"));
+    this.service.getClienteId(id)
       .subscribe(data=>{
-        this.cliente= data;
+        this.saveCliente= data;
+
+        this.formGroup.setValue({
+          name: data.name,
+          lastname: data.lastname,
+          dni: data.dni,
+          mail: data.mail,
+          phone: data.phone
+        })
       })
   }
 
-   actualizar(cliente: Cliente){
+   actualizar(){
+
+    const cliente: Cliente = {
+      dni: this.formGroup.get('dni').value,
+      lastname: this.formGroup.get('lastname').value,
+      name: this.formGroup.get('name').value,
+      mail: this.formGroup.get('mail').value,
+      phone: this.formGroup.get('phone').value,
+      id: this.saveCliente.id,
+      state: this.saveCliente.state
+    }
+
+    console.log('update: ', cliente);
+
     this.service.updateCliente(cliente)
       .subscribe(data=> {
-        this.cliente = data;
-       alert("se actualizo con exito");
+        this.c = data;
         this.router.navigate(["listar"]);
        });
    }

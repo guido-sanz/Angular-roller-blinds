@@ -52,7 +52,7 @@ export class ServiceService {
   }
 
   editarPedido(pedido: Pedido){
-    return this.http.post<Pedido>(this.url+"/editarPedido" + "/" + pedido.id, pedido);
+    return this.http.put<Pedido>(this.url+"/editarPedido" + "/" + pedido.id, pedido);
   }
 
   buscarPedidoId(id: number){
