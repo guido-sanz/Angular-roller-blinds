@@ -51,6 +51,8 @@ export class EditarPedidoComponent implements OnInit {
           ancho: data.ancho,
           alto: data.alto
         })
+
+        console.log(data);
       })
   }
 

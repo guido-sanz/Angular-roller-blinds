@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../Service/service.service';
 import { Router } from '@angular/router';
 import { Pedido } from '../../modelo/Pedido';
+import { PdfMakeWrapper, Txt, Table, Cell } from 'pdfmake-wrapper';
 
 
 
@@ -38,4 +39,40 @@ export class ListarPedidoComponent implements OnInit {
     this.routes.navigate(["EditarPedido"]);
   }
 
+  deletePedido(pedido: Pedido){
+      this.service.deletePedidoId(pedido.id, pedido.cliente.id)
+      .subscribe(data=>{
+        this.pedido= data;
+        this.routes.navigate(["listar"]);
+  });
 }
+
+  generarPDF(pedido: Pedido){
+    const pdf = new PdfMakeWrapper();
+
+    pdf.add(
+      new Table([
+        [
+        new Txt('Column 1').bold().end,
+        'Column 2',
+        'Column 3'
+        ]
+      ]).end
+    )
+
+    pdf.add(
+    this.items.forEach(element => {
+      new Cell([
+        [ element.color, element.ladoCadena],
+      ]).end
+    })
+    )
+    pdf.create().open();
+  }
+}
+
+//this.items.forEach(element => {
+//  pdf.add(
+//  new Txt(element.color).end
+//);
+//});

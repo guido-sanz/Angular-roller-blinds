@@ -6,6 +6,7 @@ import { FinalizadoComponent } from './Cliente/finalizado/finalizado.component';
 import { EditarComponent } from './Cliente/editar/editar.component';
 import { ListarPedidoComponent } from './Pedido/listar/listar.component';
 import { AgregarPedidoComponent } from './Pedido/agregar-pedido/agregar-pedido.component';
+import { EditarPedidoComponent } from './Pedido/editar-pedido/editar-pedido.component';
 
 
 
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path: 'listarPedido', component: ListarPedidoComponent},
   {path: 'listar/listarPedido', pathMatch: 'full', redirectTo: 'listarPedido'},
   {path: 'agregarPedido', component: AgregarPedidoComponent},
-  {path: 'EditarPedido', component: AgregarPedidoComponent},
+  {path: 'EditarPedido', component: EditarPedidoComponent},
 ];
 
 @NgModule({

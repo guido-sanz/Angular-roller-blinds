@@ -29,8 +29,8 @@
       <td>{{pedidos.envio}}</td>
       <td>{{pedidos.total}}</td>
       <td><a class='far fa-edit' (click)="editar(pedidos)" style='font-size:28px;color:#4D7B99' atl="Editar"></a></td>
-      <td><a class='fas fa-download' style="font-size:28px;color:#4D7B99"></a></td>
-      <td><a class='fas fa-trash-alt' style='font-size:28px;color:#E31515'></a></td>
+      <td><a class='fas fa-download' (click)="generarPDF(pedidos)" style="font-size:28px;color:#4D7B99"></a></td>
+      <td><a class='fas fa-trash-alt' (click)="deletePedido(pedidos)" style='font-size:28px;color:#E31515'></a></td>
     </tr>
 
   </table>

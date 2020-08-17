@@ -8,3 +8,6 @@
 th, td {
 	text-align: center;
 }
+a:hover{
+  background-color: #A0A2A2;
+}

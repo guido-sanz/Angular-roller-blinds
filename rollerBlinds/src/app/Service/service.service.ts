@@ -56,6 +56,10 @@ export class ServiceService {
   }
 
   buscarPedidoId(id: number){
-    return this.http.get<Pedido>(this.url+"/editarPedido" + "/" + id);
+    return this.http.get<Pedido>(this.url+"/buscarPedido" + "/" + id);
+  }
+
+  deletePedidoId(id: number, clienteId: number){
+    return this.http.delete<Pedido>(this.url+"/deletePedido" + "/" + id + "/" + clienteId)
   }
 }
