@@ -13,7 +13,7 @@ export class ServiceService {
 
   constructor(private http:HttpClient) {}
 
-  url = 'http://localhost:8080/clientes';
+  url = 'https://roller-blinds-webservice.herokuapp.com/clientes';
 
   getClientes(){
     return this.http.get<Cliente[]>(this.url+"/findAll");
