@@ -1,5 +1,6 @@
 #centrarTabla {
-	text-align: center;
+  text-align: center;
+  margin-top: 15px;
 }
 #centrarTabla table {
 	margin: 0 auto;

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cliente } from '../modelo/Cliente';
-import { FormGroup } from '@angular/forms';
-import { AgregarComponent } from '../Cliente/agregar/agregar.component';
 import { Pedido } from '../modelo/Pedido';
 
 
@@ -12,7 +10,7 @@ import { Pedido } from '../modelo/Pedido';
 export class ServiceService {
 
   constructor(private http:HttpClient) {}
-
+  //url = 'http://localhost:8080/clientes';
   url = 'https://roller-blinds-webservice.herokuapp.com/clientes';
 
   getClientes(){

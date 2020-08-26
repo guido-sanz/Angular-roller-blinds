@@ -1,5 +1,6 @@
 #centrarTabla{
-	text-align: center;
+  text-align: center;
+  margin-top: 15px;
 }
 
 #centrarTabla table{
@@ -10,3 +11,5 @@
 a:hover{
   background-color: #A0A2A2;
 }
+
+
