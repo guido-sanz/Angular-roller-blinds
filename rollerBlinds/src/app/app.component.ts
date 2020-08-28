@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -7,18 +7,26 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   imagenFondo: boolean = true;
   title = 'rollerBlinds';
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  touch(){
-    this.imagenFondo = false;
-    this.router.navigate(["listar"]);
+  ngOnInit(): void {
+
   }
 
-  touch2(){
-    this.imagenFondo = false;
-    this.router.navigate(["finalizado"]);
-  }
+
+   touch(){
+     this.imagenFondo = false;
+     this.router.navigate(["listar"]);
+   }
+
+   touch2(){
+     this.imagenFondo = false;
+     this.router.navigate(["finalizado"]);
+   }
+
+
+
 }

@@ -14,6 +14,7 @@ import { EditarComponent } from './Cliente/editar/editar.component';
 import { ListarPedidoComponent } from './Pedido/listar/listar.component';
 import { AgregarPedidoComponent } from './Pedido/agregar-pedido/agregar-pedido.component';
 import { EditarPedidoComponent } from './Pedido/editar-pedido/editar-pedido.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EditarPedidoComponent } from './Pedido/editar-pedido/editar-pedido.comp
     EditarComponent,
     ListarPedidoComponent,
     AgregarPedidoComponent,
-    EditarPedidoComponent
+    EditarPedidoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../Service/service.service';
 import { Router } from '@angular/router';
 import { Pedido } from '../../modelo/Pedido';
+import { element } from 'protractor';
 
 
 
@@ -10,17 +11,19 @@ import { Pedido } from '../../modelo/Pedido';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarPedidoComponent implements OnInit {
+export class ListarPedidoComponent implements OnInit{
+
 
   constructor(private service: ServiceService, private routes: Router) { }
   items: Pedido[];
   pedido: Pedido;
+  sumaTotalPedido:number=0;
 
 
   ngOnInit(): void {
     this.ListaDePedidos();
-  }
 
+  }
 
   ListaDePedidos(){
     let id= localStorage.getItem("id");
@@ -29,6 +32,7 @@ export class ListarPedidoComponent implements OnInit {
       .subscribe(data=>{
         this.items= data;
         console.log(this.items);
+       this.sumaPedidos();
       });
   }
 
@@ -43,6 +47,12 @@ export class ListarPedidoComponent implements OnInit {
       .subscribe(data=>{
         this.pedido= data;
         this.routes.navigate(["listar"]);
+  });
+}
+
+sumaPedidos(){
+  this.items.forEach(element => {
+    this.sumaTotalPedido = this.sumaTotalPedido + element.total;
   });
 }
 

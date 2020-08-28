@@ -20,7 +20,7 @@ export class ListarComponent implements OnInit {
       .subscribe(data=>{
         this.items = data;
       });
-
+      console.log(this.routes.url);
   }
 
   Editar(cliente: Cliente):void{
@@ -55,5 +55,11 @@ export class ListarComponent implements OnInit {
   this.routes.navigate(["agregarPedido"]);
   }
 
+  redirectToIndex(){
+    let url = this.routes.url;
+    if(url != "/listar"){
+      this.routes.navigate([""])
+    }
+  }
 
 }
